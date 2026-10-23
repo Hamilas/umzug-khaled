@@ -2,8 +2,8 @@
 
 export const site = {
   name: 'DAYFA Transporter',
-  // TODO: echte Domain eintragen (auch in astro.config.mjs und public/robots.txt)
-  url: 'https://www.dayfa-transporter.de',
+  // Domain (auch in astro.config.mjs ändern)
+  url: 'https://dayfatransporter.de',
   // Für das Impressum – müssen vor Livegang ausgefüllt werden
   owner: '[PLATZHALTER: VOLLSTÄNDIGER NAME]',
   vatNote: '[PLATZHALTER: USt-IdNr. – oder Hinweis auf Kleinunternehmerregelung nach § 19 UStG]',
