@@ -47,6 +47,7 @@ const services = [
 <section id="leistungen" class="container section" aria-labelledby="leistungen-titel">
   <span class="eyebrow">Unsere Leistungen</span>
   <h2 id="leistungen-titel" class="h2">Alles aus einer Hand – für jeden Auftrag.</h2>
+  {/* Karten-Raster: so viele Spalten wie passen (min. 250 px breit) */}
   <ul class="grid">
     {
       services.map((s) => (
@@ -107,6 +108,7 @@ const services = [
     line-height: 1.6;
     color: var(--muted);
   }
+  /* Ab 768 px (Tablet/Desktop): größere Abstände */
   @media (min-width: 768px) {
     .section {
       padding-top: 88px;

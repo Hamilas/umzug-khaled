@@ -25,6 +25,7 @@ const reviews = [
       ))
     }
   </ul>
+  {/* Google-Button erscheint automatisch, sobald googleReviewsUrl in site.ts gesetzt ist */}
   {
     site.googleReviewsUrl ? (
       <a href={site.googleReviewsUrl} class="btn btn-outline" target="_blank" rel="noopener">
@@ -86,6 +87,7 @@ const reviews = [
   strong {
     font-size: 14px;
   }
+  /* Ab 768 px (Tablet/Desktop): größere Abstände */
   @media (min-width: 768px) {
     .section {
       padding-top: 88px;

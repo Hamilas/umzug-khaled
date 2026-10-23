@@ -16,6 +16,7 @@ const steps = [
       {
         steps.map((s, i) => (
           <li>
+            {/* Große Nummer nur optisch; Screenreader lesen "Schritt X" */}
             <span class="num" aria-hidden="true">
               {String(i + 1).padStart(2, '0')}
             </span>
@@ -74,6 +75,7 @@ const steps = [
     line-height: 1.6;
     color: var(--on-navy);
   }
+  /* Ab 768 px (Tablet/Desktop): größere Abstände */
   @media (min-width: 768px) {
     .inner {
       padding-top: 80px;

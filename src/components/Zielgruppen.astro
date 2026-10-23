@@ -12,6 +12,7 @@ const groups = [
   <div class="container inner">
     <span class="eyebrow">Wer wir bedienen</span>
     <h2 id="zielgruppen-titel">Für Privat, Gewerbe und Verwaltung.</h2>
+    {/* Kacheln mit Icon und Bezeichnung */}
     <ul class="grid">
       {
         groups.map((g) => (
@@ -66,6 +67,7 @@ const groups = [
     font-size: 15px;
     font-weight: 700;
   }
+  /* Ab 768 px (Tablet/Desktop): größere Abstände */
   @media (min-width: 768px) {
     .inner {
       padding-top: 64px;

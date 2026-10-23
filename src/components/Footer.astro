@@ -15,6 +15,7 @@ const path = Astro.url.pathname;
   {
     variant === 'home' && (
       <div class="container cols">
+        {/* Vier Spalten, umbrechend auf kleinen Bildschirmen */}
         <div class="brand">
           <span class="f-logo">DAYFA</span>
           <span class="f-sub">TRANSPORTER</span>
@@ -45,6 +46,7 @@ const path = Astro.url.pathname;
       </div>
     )
   }
+  {/* Copyright und Link zum Impressum */}
   <div class:list={['container', 'legal', { 'legal-top': variant === 'home' }]}>
     <span>© {year} DAYFA Transporter. Alle Rechte vorbehalten.</span>
     <span class="legal-links">
@@ -139,6 +141,7 @@ const path = Astro.url.pathname;
   .legal-links a[aria-current='page'] {
     color: #fff;
   }
+  /* Unter 900 px: unten Platz lassen, damit der Sticky-Button nichts verdeckt */
   @media (max-width: 899px) {
     .site-footer {
       /* Platz für den mobilen Sticky-Button */

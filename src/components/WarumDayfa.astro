@@ -12,6 +12,7 @@ const points = [
 ---
 
 <section id="ueber-uns" class="container about" aria-labelledby="ueber-uns-titel">
+  {/* Foto: lädt erst beim Scrollen (lazy) */}
   <div class="media">
     <Picture
       src={teamImg}
@@ -22,6 +23,7 @@ const points = [
       loading="lazy"
     />
   </div>
+  {/* Text mit Häkchen-Liste */}
   <div class="copy">
     <span class="eyebrow">Warum DAYFA</span>
     <h2 id="ueber-uns-titel" class="h2">Gründlich, zuverlässig und persönlich.</h2>
@@ -99,6 +101,7 @@ const points = [
     line-height: 1.6;
     color: var(--muted);
   }
+  /* Ab 768 px (Tablet/Desktop): größere Abstände */
   @media (min-width: 768px) {
     .about {
       padding-top: 88px;

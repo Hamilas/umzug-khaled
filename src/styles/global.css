@@ -67,6 +67,7 @@ p {
   margin: 0;
 }
 
+/* Sichtbarer Fokusrahmen für Tastaturbedienung (Barrierefreiheit) */
 :focus-visible {
   outline: 3px solid var(--orange);
   outline-offset: 3px;
@@ -78,6 +79,7 @@ p {
   outline-color: var(--navy);
 }
 
+/* Nur für Screenreader sichtbar */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -106,6 +108,7 @@ p {
   top: 16px;
 }
 
+/* Inhaltsbreite max. 1200 px, seitlicher Abstand 16 px (mobil) bzw. 24 px */
 .container {
   max-width: var(--max);
   margin: 0 auto;
@@ -120,6 +123,7 @@ p {
   }
 }
 
+/* Kleine Überschrift über den Abschnittstiteln (z. B. "UNSERE LEISTUNGEN") */
 .eyebrow {
   display: block;
   font-size: 12px;

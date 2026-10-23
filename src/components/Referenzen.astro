@@ -20,6 +20,7 @@ const gallery = [
     <h2 id="referenzen-titel" class="h2">Der Unterschied ist sichtbar.</h2>
     <!-- TODO: Sobald Vorher/Nachher-Fotos für Umzug und Entsorgung vorliegen, hier Tabs ergänzen (siehe Design). -->
     <p class="tag">Entrümpelung</p>
+    {/* Vorher/Nachher nebeneinander (mobil untereinander) */}
     <div class="compare">
       <figure class="ba">
         <Picture src={beforeImg} formats={['avif', 'webp']} widths={[400, 700, 1000]} sizes="(min-width: 1000px) 580px, 100vw" alt="Vollgestellter Raum vor der Entrümpelung" loading="lazy" />
@@ -30,6 +31,7 @@ const gallery = [
         <figcaption class="badge badge-after">NACHHER</figcaption>
       </figure>
     </div>
+    {/* Galerie mit Bildunterschriften */}
     <div class="gallery">
       {
         gallery.map((g) => (
@@ -125,6 +127,7 @@ const gallery = [
     font-size: 14px;
     font-weight: 600;
   }
+  /* Ab 768 px (Tablet/Desktop): größere Abstände */
   @media (min-width: 768px) {
     .inner {
       padding-top: 80px;
