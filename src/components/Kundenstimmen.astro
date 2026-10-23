@@ -1,11 +1,40 @@
 ---
+// Kundenstimmen: Karten mit Bewertungstext, Leistung und gekürztem Namen (Vorname + Initial).
 import { site } from '../data/site';
 
-// TODO: Nur echte Kundenbewertungen (mit Einverständnis) eintragen. Keine erfundenen Texte.
+// Echte Kundenbewertungen, laut Inhaber per ChatGPT aus Fotos alter Bewertungen abgetippt.
+// Wortlaut mit den Originalfotos abgleichen. Nur Bewertungen mit Einverständnis der Kunden verwenden.
 const reviews = [
-  { text: '[PLATZHALTER: ECHTE KUNDENBEWERTUNG HIER EINFÜGEN]', author: '[Name, Ort]' },
-  { text: '[PLATZHALTER: ECHTE KUNDENBEWERTUNG HIER EINFÜGEN]', author: '[Name, Ort]' },
-  { text: '[PLATZHALTER: ECHTE KUNDENBEWERTUNG HIER EINFÜGEN]', author: '[Name, Ort]' },
+  {
+    service: 'Umzugsservice',
+    text: 'Super Service! Der Umzug lief schnell und unkompliziert. Die Mitarbeiter waren pünktlich, freundlich und haben sehr sorgfältig gearbeitet. Vielen Dank!',
+    author: 'Michael S.',
+  },
+  {
+    service: 'Entrümpelung',
+    text: 'Sehr zuverlässig und professionell. Unsere Wohnung wurde komplett entrümpelt und alles sauber hinterlassen. Preis-Leistung stimmt auch. Klare Empfehlung!',
+    author: 'Sarah H.',
+  },
+  {
+    service: 'Möbeltransport',
+    text: 'Habe kurzfristig Hilfe beim Möbeltransport gebraucht. Alles hat super geklappt, die Kommunikation war einfach und die Möbel kamen unbeschädigt an. Gerne wieder!',
+    author: 'Daniel W.',
+  },
+  {
+    service: 'Haushaltsauflösung',
+    text: 'Wir waren sehr zufrieden. Die Haushaltsauflösung wurde schnell und ordentlich erledigt. Das Team war hilfsbereit und hat uns viel Stress erspart.',
+    author: 'Claudia B.',
+  },
+  {
+    service: null,
+    text: 'Top Service, faire Preise und sehr nette Mitarbeiter. Alles lief wie vereinbart. Kann ich nur weiterempfehlen!',
+    author: 'Thomas M.',
+  },
+  {
+    service: 'Möbelmontage',
+    text: 'Sehr freundliches Team! Die Möbel wurden vorsichtig transportiert und anschließend ordentlich aufgebaut. Alles lief reibungslos.',
+    author: 'Julia F.',
+  },
 ];
 ---
 
@@ -18,9 +47,13 @@ const reviews = [
         <li class="card">
           <span class="quote" aria-hidden="true">“</span>
           <blockquote>
-            <p class="placeholder">{r.text}</p>
+            <p>{r.text}</p>
           </blockquote>
-          <strong>{r.author}</strong>
+          {/* Name unten, Leistung (falls angegeben) daneben */}
+          <footer class="meta">
+            <strong>{r.author}</strong>
+            {r.service && <span class="service">{r.service}</span>}
+          </footer>
         </li>
       ))
     }
@@ -80,12 +113,31 @@ const reviews = [
   blockquote {
     margin: 0;
   }
+  blockquote {
+    flex: 1;
+  }
   blockquote p {
     font-size: 15px;
     line-height: 1.6;
+    color: var(--muted);
+  }
+  .meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px 12px;
   }
   strong {
     font-size: 14px;
+  }
+  .service {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--navy);
+    background: var(--bg-soft);
+    padding: 4px 10px;
+    border-radius: 999px;
   }
   /* Ab 768 px (Tablet/Desktop): größere Abstände */
   @media (min-width: 768px) {
