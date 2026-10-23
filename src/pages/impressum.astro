@@ -1,5 +1,5 @@
 ---
-// Impressum. USt-Angabe ist noch Platzhalter (siehe site.ts / TODO.md).
+// Impressum: Anbieterangaben, Kontakt und Verantwortlicher.
 import Legal from '../layouts/Legal.astro';
 import { site } from '../data/site';
 ---
@@ -28,26 +28,10 @@ import { site } from '../data/site';
   </section>
 
   <section>
-    <h2>Umsatzsteuer-ID</h2>
-    <p>
-      Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br />
-      <span class="placeholder">{site.vatNote}</span>
-    </p>
-  </section>
-
-  <section>
     <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
     <p>
       {site.owner}<br />
       {site.street}, {site.zip} {site.city}
-    </p>
-  </section>
-
-  <section>
-    <h2>Streitbeilegung</h2>
-    <p>
-      Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
-      teilzunehmen. <span class="placeholder">[PLATZHALTER: Bitte prüfen und bei Bedarf anpassen.]</span>
     </p>
   </section>
 </Legal>
