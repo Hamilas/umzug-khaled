@@ -46,6 +46,6 @@ src/pages/            Startseite, Impressum, sitemap.xml, robots.txt
 
 ## Inhalte ändern
 
-- Kontaktdaten, Öffnungszeiten, Inhabername, Google-Link: `src/data/site.ts`
+- Kontaktdaten, Inhabername, Google-Link: `src/data/site.ts`
 - Texte der Abschnitte: jeweilige Datei in `src/components/`
 - Domain: `src/data/site.ts` **und** `astro.config.mjs`

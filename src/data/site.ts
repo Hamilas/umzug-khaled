@@ -6,7 +6,6 @@ export const site = {
   url: 'https://www.dayfa-transporter.de',
   owner: '[PLATZHALTER: VOLLSTÄNDIGER NAME]',
   vatNote: '[PLATZHALTER: USt-IdNr. – oder Hinweis auf Kleinunternehmerregelung nach § 19 UStG]',
-  openingHours: '[PLATZHALTER: Mo–Sa, Uhrzeiten]',
   phoneDisplay: '0176 83433389',
   phoneHref: 'tel:+4917683433389',
   phoneIntl: '+49 176 83433389',

@@ -6,7 +6,6 @@ Alles hier Genannte ist auf der Seite als sichtbarer `[PLATZHALTER]` markiert od
 
 - [ ] **Vollständiger Name des Inhabers** – Impressum (`owner` in `src/data/site.ts`)
 - [ ] **USt-IdNr.** oder Hinweis auf Kleinunternehmerregelung (§ 19 UStG) – Impressum (`vatNote`)
-- [ ] **Erreichbarkeit / Öffnungszeiten** – Kontaktbereich (`openingHours`)
 - [ ] **Echte Kundenbewertungen** (mit Einverständnis der Kunden) – `src/components/Kundenstimmen.astro`
 - [ ] **Link zum Google-Unternehmensprofil** (Bewertungen) – `googleReviewsUrl`; danach erscheint der Button automatisch
 - [ ] **Logodatei** (SVG bevorzugt) – derzeit Text-Logo in `src/components/Logo.astro`, Favicon ist ein Platzhalter-„D“

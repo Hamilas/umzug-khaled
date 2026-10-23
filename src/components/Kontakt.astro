@@ -16,10 +16,6 @@ import { site } from '../data/site';
     </a>
     <a href={site.phoneHref} class="row on-light">Telefon: {site.phoneDisplay}</a>
     <a href={`mailto:${site.email}`} class="row on-light email">E-Mail: {site.email}</a>
-    <div class="hours">
-      <strong>Erreichbarkeit</strong><br />
-      <span class="placeholder">{site.openingHours}</span>
-    </div>
   </div>
 
   <div class="location">
@@ -82,14 +78,6 @@ import { site } from '../data/site';
   }
   .email {
     overflow-wrap: anywhere;
-  }
-  .hours {
-    font-size: 14px;
-    line-height: 1.7;
-    color: var(--muted);
-  }
-  .hours strong {
-    color: var(--navy);
   }
   .location {
     flex: 1 1 360px;
