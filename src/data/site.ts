@@ -20,6 +20,4 @@ export const site = {
     encodeURIComponent('Elisabeth-Selbert-Allee 35, 53175 Bonn'),
   // TODO: Link zum Google-Unternehmensprofil (Bewertungen). Solange null, wird ein Platzhalter angezeigt.
   googleReviewsUrl: null as string | null,
-  // TODO: Formspree-Endpunkt eintragen, z. B. https://formspree.io/f/abcdwxyz
-  formEndpoint: 'https://formspree.io/f/PLATZHALTER',
 };

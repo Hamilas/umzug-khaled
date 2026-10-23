@@ -1,18 +1,5 @@
 ---
 import { site } from '../data/site';
-
-const endpointMissing = site.formEndpoint.includes('PLATZHALTER');
-const services = [
-  'Entrümpelung',
-  'Haushaltsauflösung',
-  'Entsorgung',
-  'Privatumzug',
-  'Firmenumzug',
-  'Transport',
-  'Verpackungsservice',
-  'Möbelmontage',
-  'Sonstiges',
-];
 ---
 
 <section id="kontakt" class="container kontakt" aria-labelledby="kontakt-titel">
@@ -31,72 +18,20 @@ const services = [
       <strong>Erreichbarkeit</strong><br />
       <span class="placeholder">{site.openingHours}</span>
     </div>
-
-    <div class="location">
-      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0F1F3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.8 12 21 12 21z" />
-        <circle cx="12" cy="9.5" r="2.5" />
-      </svg>
-      <div>
-        <strong>Bonn</strong>
-        <address>
-          {site.street}, {site.zip} {site.city} · Einsatz auch in der Umgebung und deutschlandweit auf Anfrage.
-        </address>
-        <a href={site.routeUrl} class="btn btn-outline on-light" target="_blank" rel="noopener">
-          Route planen<span class="sr-only"> (öffnet Google Maps)</span>
-        </a>
-      </div>
-    </div>
   </div>
 
-  <div class="form-card on-light">
-    <h3>Anfrage senden</h3>
-    <!-- TODO: Formspree-Endpunkt in src/data/site.ts eintragen -->
-    <form action={site.formEndpoint} method="POST">
-      <input type="hidden" name="_subject" value="Neue Anfrage über dayfa-transporter.de" />
-      <div class="hp" aria-hidden="true">
-        <label>Nicht ausfüllen <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" /></label>
-      </div>
-
-      <div class="field">
-        <label for="f-name">Name <span aria-hidden="true">*</span></label>
-        <input id="f-name" name="name" type="text" autocomplete="name" required />
-      </div>
-      <div class="two">
-        <div class="field">
-          <label for="f-email">E-Mail <span aria-hidden="true">*</span></label>
-          <input id="f-email" name="email" type="email" autocomplete="email" required />
-        </div>
-        <div class="field">
-          <label for="f-tel">Telefon <span class="opt">(optional)</span></label>
-          <input id="f-tel" name="telefon" type="tel" autocomplete="tel" />
-        </div>
-      </div>
-      <div class="field">
-        <label for="f-leistung">Leistung</label>
-        <select id="f-leistung" name="leistung">
-          {services.map((s) => <option>{s}</option>)}
-        </select>
-      </div>
-      <div class="field">
-        <label for="f-nachricht">Ihr Vorhaben <span aria-hidden="true">*</span></label>
-        <textarea id="f-nachricht" name="nachricht" rows="5" required placeholder="z. B. Kellerräumung, ca. 15 m², 2. OG ohne Aufzug, Wunschtermin …"></textarea>
-      </div>
-      <div class="consent">
-        <input id="f-consent" name="datenschutz" type="checkbox" value="zugestimmt" required />
-        <label for="f-consent">
-          Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung der Anfrage verwendet werden. Weitere Infos in
-          der <a href="/datenschutz">Datenschutzerklärung</a>. <span aria-hidden="true">*</span>
-        </label>
-      </div>
-      {
-        endpointMissing && (
-          <p class="placeholder notice">[PLATZHALTER: Formular-Endpunkt fehlt – Formular sendet noch nicht.]</p>
-        )
-      }
-      <button type="submit" class="btn btn-primary submit">Anfrage absenden</button>
-      <p class="req"><span aria-hidden="true">*</span> Pflichtfeld</p>
-    </form>
+  <div class="location">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#0F1F3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 21s7-6.2 7-11.5A7 7 0 005 9.5C5 14.8 12 21 12 21z" />
+      <circle cx="12" cy="9.5" r="2.5" />
+    </svg>
+    <strong>Bonn</strong>
+    <address>
+      {site.street}, {site.zip} {site.city} · Einsatz auch in der Umgebung und deutschlandweit auf Anfrage.
+    </address>
+    <a href={site.routeUrl} class="btn btn-outline on-light" target="_blank" rel="noopener">
+      Route planen<span class="sr-only"> (öffnet Google Maps)</span>
+    </a>
   </div>
 </section>
 
@@ -107,7 +42,7 @@ const services = [
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    align-items: flex-start;
+    align-items: stretch;
   }
   .info {
     flex: 1 1 440px;
@@ -158,138 +93,36 @@ const services = [
     color: var(--navy);
   }
   .location {
-    margin-top: 6px;
+    flex: 1 1 360px;
+    min-width: 0;
     background: var(--bg-soft);
     border-radius: 20px;
-    padding: 24px;
+    padding: 28px 24px;
     display: flex;
-    gap: 16px;
-    align-items: flex-start;
-  }
-  .location svg {
-    flex: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
   }
   .location strong {
     font-size: 18px;
   }
   address {
     font-style: normal;
-    margin: 6px 0 14px;
     font-size: 14px;
     line-height: 1.6;
     color: var(--muted);
   }
-  .form-card {
-    flex: 1 1 360px;
-    min-width: 0;
-    background: #fff;
-    border: 1px solid var(--border);
-    border-radius: 20px;
-    padding: 24px;
-  }
-  .form-card h3 {
-    font-size: 20px;
-    font-weight: 800;
-    margin-bottom: 18px;
-  }
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  .two {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
-    gap: 16px;
-  }
-  .field {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-  label {
-    font-size: 14px;
-    font-weight: 600;
-  }
-  .opt {
-    font-weight: 500;
-    color: var(--muted);
-  }
-  input[type='text'],
-  input[type='email'],
-  input[type='tel'],
-  select,
-  textarea {
-    font: inherit;
-    font-size: 16px;
-    color: var(--navy);
-    background: #fff;
-    border: 1.5px solid #8a97ad;
-    border-radius: 10px;
-    padding: 11px 14px;
-    min-height: 46px;
-    width: 100%;
-  }
-  textarea {
-    resize: vertical;
-  }
-  textarea::placeholder {
-    color: #6b7a93;
-  }
-  input:focus-visible,
-  select:focus-visible,
-  textarea:focus-visible {
-    outline: 3px solid var(--navy);
-    outline-offset: 1px;
-    border-color: var(--navy);
-  }
-  .consent {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-  }
-  .consent input {
-    flex: none;
-    width: 20px;
-    height: 20px;
-    margin: 2px 0 0;
-    accent-color: var(--navy);
-  }
-  .consent label {
-    font-weight: 500;
-    line-height: 1.5;
-    color: var(--muted);
-  }
-  .consent a {
-    color: var(--navy);
-    text-decoration: underline;
-    font-weight: 600;
-  }
-  .submit {
-    align-self: flex-start;
-    padding: 14px 28px;
-  }
-  .req {
-    font-size: 13px;
-    color: var(--muted);
-  }
-  .notice {
-    font-size: 13px;
-    padding: 8px 10px;
-  }
-  .hp {
-    position: absolute;
-    left: -9999px;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
+  .location .btn {
+    margin-top: 6px;
   }
   @media (min-width: 768px) {
     .kontakt {
       padding-bottom: 88px;
     }
-    .form-card {
-      padding: 32px;
+    .location {
+      padding: 36px;
     }
   }
 </style>

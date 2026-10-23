@@ -14,12 +14,10 @@ Alles hier Genannte ist auf der Seite als sichtbarer `[PLATZHALTER]` markiert od
 
 ## Technik
 
-- [ ] **Formular-Endpunkt**: Formspree-Konto anlegen, Formular erstellen, Endpunkt in `formEndpoint` eintragen. Bis dahin sendet das Formular nicht (Hinweis ist auf der Seite sichtbar). Alternativ Netlify Forms nutzen, falls auf Netlify gehostet.
 - [ ] Optional: Vorher/Nachher-Fotos für **Umzug** und **Entsorgung** – dann können die Tabs aus dem Design ergänzt werden (aktuell nur „Entrümpelung“)
 - [ ] Nach Livegang: Seite in der Google Search Console anmelden und `sitemap.xml` einreichen
 
 ## Rechtliches (bitte prüfen lassen)
 
-- [ ] **Datenschutzerklärung** ausfüllen – `src/pages/datenschutz.astro` enthält nur die Abschnittsstruktur mit Platzhaltern (Hoster, Formulardienst, WhatsApp, Aufsichtsbehörde, Stand)
+- [ ] **Datenschutzerklärung** ausfüllen – `src/pages/datenschutz.astro` enthält nur die Abschnittsstruktur mit Platzhaltern (Hoster, E-Mail, WhatsApp, Aufsichtsbehörde, Stand)
 - [ ] **Streitbeilegung** im Impressum prüfen
-- [ ] Datenschutz-Einwilligungstext unter dem Kontaktformular prüfen
