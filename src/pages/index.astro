@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Leistungen from '../components/Leistungen.astro';
+import Zielgruppen from '../components/Zielgruppen.astro';
+import Ablauf from '../components/Ablauf.astro';
+import WarumDayfa from '../components/WarumDayfa.astro';
+import Referenzen from '../components/Referenzen.astro';
+import Kundenstimmen from '../components/Kundenstimmen.astro';
+import Kontakt from '../components/Kontakt.astro';
+import Footer from '../components/Footer.astro';
+import StickyCta from '../components/StickyCta.astro';
+import { site } from '../data/site';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'MovingCompany',
+  name: site.name,
+  url: site.url,
+  image: new URL('/favicon.svg', site.url).href,
+  telephone: site.phoneIntl,
+  email: site.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.street,
+    postalCode: site.zip,
+    addressLocality: site.city,
+    addressCountry: 'DE',
+  },
+  areaServed: [
+    { '@type': 'City', name: 'Bonn' },
+    { '@type': 'Country', name: 'Deutschland' },
+  ],
+  sameAs: [site.whatsapp],
+};
+---
+
+<Base
+  title="Entrümpelung, Umzug & Entsorgung in Bonn | DAYFA Transporter"
+  description="DAYFA Transporter aus Bonn: Entrümpelung, Haushaltsauflösung, Entsorgung, Umzüge und Transporte aus einer Hand. Kostenloses Angebot per WhatsApp, Telefon oder Formular."
+  jsonLd={jsonLd}
+>
+  <Header />
+  <main id="inhalt">
+    <Hero />
+    <Leistungen />
+    <Zielgruppen />
+    <Ablauf />
+    <WarumDayfa />
+    <Referenzen />
+    <Kundenstimmen />
+    <Kontakt />
+  </main>
+  <Footer />
+  <StickyCta />
+</Base>

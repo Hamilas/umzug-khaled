@@ -1,0 +1,75 @@
+---
+const groups = [
+  { label: 'Privathaushalte', icon: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/>' },
+  { label: 'Büros & Gewerbe', icon: '<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2"/>' },
+  { label: 'Hausverwaltungen', icon: '<circle cx="8" cy="12" r="3.5"/><path d="M11.5 12H21M17 12v3M20 12v2"/>' },
+  { label: 'Vermieter & Eigentümer', icon: '<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M8 15h4"/>' },
+];
+---
+
+<section class="band" aria-labelledby="zielgruppen-titel">
+  <div class="container inner">
+    <span class="eyebrow">Wer wir bedienen</span>
+    <h2 id="zielgruppen-titel">Für Privat, Gewerbe und Verwaltung.</h2>
+    <ul class="grid">
+      {
+        groups.map((g) => (
+          <li>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#0F1F3D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={g.icon} />
+            {g.label}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .band {
+    background: #fff;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .inner {
+    padding-top: 56px;
+    padding-bottom: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  h2 {
+    font-size: clamp(24px, 4.5vw, 32px);
+    line-height: 1.15;
+    font-weight: 800;
+    text-align: center;
+  }
+  .grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+    gap: 16px;
+  }
+  li {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  @media (min-width: 768px) {
+    .inner {
+      padding-top: 64px;
+      padding-bottom: 64px;
+      gap: 32px;
+    }
+  }
+</style>

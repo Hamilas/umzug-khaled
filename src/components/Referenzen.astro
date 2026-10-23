@@ -1,0 +1,139 @@
+---
+import { Picture } from 'astro:assets';
+import beforeImg from '../../assets/photos/before.jpg';
+import afterImg from '../../assets/photos/after.jpg';
+import stairsImg from '../../assets/photos/stairs.jpg';
+import wrappedImg from '../../assets/photos/wrapped.jpg';
+import packingImg from '../../assets/photos/packing.jpg';
+
+const gallery = [
+  { src: stairsImg, alt: 'Zwei DAYFA Mitarbeiter tragen ein verpacktes Möbelstück durchs Treppenhaus', caption: 'Transport im Treppenhaus' },
+  { src: wrappedImg, alt: 'Möbel sicher in Folie und Decken verpackt', caption: 'Sicher verpackt' },
+  { src: packingImg, alt: 'Verpackte Möbel und Umzugskartons', caption: 'Möbel und Kartons bereit zum Verladen' },
+];
+---
+
+<section id="referenzen" class="band" aria-labelledby="referenzen-titel">
+  <div class="container inner">
+    <span class="eyebrow">Unsere Arbeit</span>
+    <h2 id="referenzen-titel" class="h2">Der Unterschied ist sichtbar.</h2>
+    <!-- TODO: Sobald Vorher/Nachher-Fotos für Umzug und Entsorgung vorliegen, hier Tabs ergänzen (siehe Design). -->
+    <p class="tag">Entrümpelung</p>
+    <div class="compare">
+      <figure class="ba">
+        <Picture src={beforeImg} formats={['avif', 'webp']} widths={[400, 700, 1000]} sizes="(min-width: 1000px) 580px, 100vw" alt="Vollgestellter Raum vor der Entrümpelung" loading="lazy" />
+        <figcaption class="badge badge-before">VORHER</figcaption>
+      </figure>
+      <figure class="ba">
+        <Picture src={afterImg} formats={['avif', 'webp']} widths={[400, 700, 1000]} sizes="(min-width: 1000px) 580px, 100vw" alt="Leerer, besenreiner Raum nach der Entrümpelung" loading="lazy" />
+        <figcaption class="badge badge-after">NACHHER</figcaption>
+      </figure>
+    </div>
+    <div class="gallery">
+      {
+        gallery.map((g) => (
+          <figure>
+            <Picture src={g.src} formats={['avif', 'webp']} widths={[400, 700]} sizes="(min-width: 1000px) 380px, (min-width: 600px) 50vw, 100vw" alt={g.alt} loading="lazy" />
+            <figcaption>{g.caption}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .band {
+    background: #fff;
+    border-top: 1px solid var(--border);
+  }
+  .inner {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+  .h2 {
+    margin: 12px 0 24px;
+  }
+  .tag {
+    display: inline-block;
+    background: var(--navy);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 999px;
+    margin-bottom: 20px;
+  }
+  .compare {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+    gap: 20px;
+  }
+  figure {
+    margin: 0;
+  }
+  .ba {
+    position: relative;
+    height: 280px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #b9c0cc;
+  }
+  .ba :global(img) {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 6px 12px;
+    border-radius: 999px;
+  }
+  .badge-before {
+    background: var(--navy);
+    color: #fff;
+  }
+  .badge-after {
+    background: var(--orange);
+    color: var(--navy);
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .gallery figure {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .gallery :global(img) {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 14px;
+  }
+  .gallery figcaption {
+    font-size: 14px;
+    font-weight: 600;
+  }
+  @media (min-width: 768px) {
+    .inner {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+    .h2 {
+      margin-bottom: 32px;
+    }
+    .ba {
+      height: 340px;
+    }
+  }
+</style>

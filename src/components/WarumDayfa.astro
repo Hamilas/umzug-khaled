@@ -1,0 +1,111 @@
+---
+import { Picture } from 'astro:assets';
+import teamImg from '../../assets/photos/team.jpg';
+
+const points = [
+  { title: 'Sorgfältige Behandlung', text: 'Ihr Hab und Gut wird geschützt verladen und sicher transportiert.' },
+  { title: 'Festpreis auf Anfrage', text: 'Klare Konditionen vorab – keine bösen Überraschungen.' },
+  { title: 'Fachgerechte Entsorgung', text: 'Wir trennen, entsorgen und recyceln nach den geltenden Vorgaben.' },
+  { title: 'Flexible Termine', text: 'Auch kurzfristig und am Wochenende – nach Absprache.' },
+];
+---
+
+<section id="ueber-uns" class="container about" aria-labelledby="ueber-uns-titel">
+  <div class="media">
+    <Picture
+      src={teamImg}
+      formats={['avif', 'webp']}
+      widths={[480, 800, 1100]}
+      sizes="(min-width: 1000px) 540px, 100vw"
+      alt="DAYFA Mitarbeiter bei der Arbeit in einer Wohnung mit verpackten Möbeln"
+      loading="lazy"
+    />
+  </div>
+  <div class="copy">
+    <span class="eyebrow">Warum DAYFA</span>
+    <h2 id="ueber-uns-titel" class="h2">Gründlich, zuverlässig und persönlich.</h2>
+    <ul class="points">
+      {
+        points.map((p) => (
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#B45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12l5 5L20 7" />
+            </svg>
+            <div>
+              <h3>{p.title}</h3>
+              <p>{p.text}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .about {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 36px 56px;
+  }
+  .media {
+    flex: 1 1 380px;
+    min-width: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--border);
+  }
+  .media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+  .copy {
+    flex: 1 1 460px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .points {
+    list-style: none;
+    margin: 8px 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  li {
+    display: flex;
+    gap: 14px;
+  }
+  li svg {
+    flex: none;
+    margin-top: 2px;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  p {
+    margin-top: 4px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  @media (min-width: 768px) {
+    .about {
+      padding-top: 88px;
+      padding-bottom: 88px;
+    }
+    .media {
+      aspect-ratio: auto;
+      height: 460px;
+    }
+  }
+</style>

@@ -1,0 +1,52 @@
+---
+import Legal from '../layouts/Legal.astro';
+import { site } from '../data/site';
+---
+
+<Legal
+  title="Impressum | DAYFA Transporter Bonn"
+  description="Impressum von DAYFA Transporter, Elisabeth-Selbert-Allee 35, 53175 Bonn – Anbieterkennzeichnung und Kontaktdaten."
+  heading="Impressum"
+>
+  <section>
+    <h2>Angaben gemäß § 5 DDG</h2>
+    <p>
+      DAYFA Transporter<br />
+      Inhaber: <span class="placeholder">{site.owner}</span><br />
+      {site.street}<br />
+      {site.zip} {site.city}
+    </p>
+  </section>
+
+  <section>
+    <h2>Kontakt</h2>
+    <p>
+      Telefon: <a href={site.phoneHref}>{site.phoneDisplay}</a><br />
+      E-Mail: <a href={`mailto:${site.email}`}>{site.email}</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>Umsatzsteuer-ID</h2>
+    <p>
+      Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:<br />
+      <span class="placeholder">{site.vatNote}</span>
+    </p>
+  </section>
+
+  <section>
+    <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+    <p>
+      <span class="placeholder">{site.owner}</span><br />
+      {site.street}, {site.zip} {site.city}
+    </p>
+  </section>
+
+  <section>
+    <h2>Streitbeilegung</h2>
+    <p>
+      Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+      teilzunehmen. <span class="placeholder">[PLATZHALTER: Bitte prüfen und bei Bedarf anpassen.]</span>
+    </p>
+  </section>
+</Legal>

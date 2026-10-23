@@ -1,0 +1,147 @@
+---
+import { site } from '../data/site';
+
+interface Props {
+  variant?: 'home' | 'sub';
+}
+const { variant = 'home' } = Astro.props;
+const year = new Date().getFullYear();
+const path = Astro.url.pathname;
+---
+
+<footer class="site-footer on-navy">
+  {
+    variant === 'home' && (
+      <div class="container cols">
+        <div class="brand">
+          <span class="f-logo">DAYFA</span>
+          <span class="f-sub">TRANSPORTER</span>
+          <p>Umzüge, Transporte, Entrümpelung und Entsorgung – zuverlässig und zu fairen Preisen.</p>
+        </div>
+        <nav aria-label="Footer-Navigation" class="col">
+          <h2>NAVIGATION</h2>
+          <a href="#leistungen">Leistungen</a>
+          <a href="#ablauf">Ablauf</a>
+          <a href="#ueber-uns">Über uns</a>
+          <a href="#kontakt">Kontakt</a>
+        </nav>
+        <div class="col">
+          <h2>LEISTUNGEN</h2>
+          <span>Umzüge</span>
+          <span>Transporte</span>
+          <span>Entrümpelung</span>
+          <span>Entsorgung</span>
+        </div>
+        <div class="col">
+          <h2>KONTAKT</h2>
+          <a href={site.phoneHref}>{site.phoneDisplay}</a>
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+          <span>
+            {site.street}, {site.zip} {site.city}
+          </span>
+        </div>
+      </div>
+    )
+  }
+  <div class:list={['container', 'legal', { 'legal-top': variant === 'home' }]}>
+    <span>© {year} DAYFA Transporter. Alle Rechte vorbehalten.</span>
+    <span class="legal-links">
+      <a href="/impressum" aria-current={path.startsWith('/impressum') ? 'page' : undefined}>Impressum</a>
+      <a href="/datenschutz" aria-current={path.startsWith('/datenschutz') ? 'page' : undefined}>Datenschutz</a>
+    </span>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--navy);
+    color: #fff;
+  }
+  .cols {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px 64px;
+    justify-content: space-between;
+    padding-top: 56px;
+    padding-bottom: 28px;
+  }
+  .brand {
+    flex: 1 1 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .f-logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+  .f-sub {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--orange);
+  }
+  .brand p {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--on-navy);
+    max-width: 320px;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--on-navy);
+    min-width: 0;
+  }
+  .col h2 {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    margin-bottom: 2px;
+  }
+  .col a,
+  .col span {
+    overflow-wrap: anywhere;
+  }
+  .col a:hover,
+  .legal a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 28px;
+    font-size: 13px;
+    color: #afbbd2;
+  }
+  .legal-top {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+  .legal-links {
+    display: flex;
+    gap: 20px;
+  }
+  .legal-links a {
+    display: inline-block;
+    padding: 4px 0;
+  }
+  .legal-links a[aria-current='page'] {
+    color: #fff;
+  }
+  @media (max-width: 899px) {
+    .site-footer {
+      /* Platz für den mobilen Sticky-Button */
+      padding-bottom: 72px;
+    }
+  }
+</style>

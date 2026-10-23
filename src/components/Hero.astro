@@ -1,0 +1,143 @@
+---
+import { Picture } from 'astro:assets';
+import heroImg from '../../assets/photos/hero-truck.jpg';
+
+const usps = ['Kostenloses Angebot', 'Faire Preise', 'Pünktlich & zuverlässig', 'Flexible Termine'];
+---
+
+<section id="top" class="hero on-navy">
+  <div class="container hero-inner">
+    <div class="copy">
+      <span class="eyebrow">Entrümpelung · Haushaltsauflösung · Entsorgung</span>
+      <h1>Entrümpelung ohne Stress – <span class="accent">besenrein übergeben.</span></h1>
+      <p class="lead">
+        Wir räumen Wohnungen, Keller, Dachböden und ganze Haushalte schnell und zuverlässig – inklusive fachgerechter
+        Entsorgung. Umzüge und Transporte gibt es bei uns aus einer Hand.
+      </p>
+      <div class="actions">
+        <a href="#kontakt" class="btn btn-primary">Jetzt Angebot anfragen <span aria-hidden="true">→</span></a>
+        <a href="#leistungen" class="btn btn-ghost-light">Unsere Leistungen</a>
+      </div>
+    </div>
+    <div class="media">
+      <Picture
+        src={heroImg}
+        formats={['avif', 'webp']}
+        widths={[480, 800, 1200]}
+        sizes="(min-width: 1000px) 560px, 100vw"
+        alt="DAYFA Transporter Lieferwagen mit zwei Mitarbeitern vor einem Wohnhaus"
+        loading="eager"
+        fetchpriority="high"
+      />
+    </div>
+  </div>
+  <div class="usp-bar">
+    <ul class="container usps">
+      {
+        usps.map((u) => (
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#F5A524" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12l5 5L20 7" />
+            </svg>
+            {u}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .hero {
+    background: linear-gradient(120deg, var(--navy) 0%, var(--navy-mid) 60%, var(--navy-light) 100%);
+    color: #fff;
+  }
+  .hero-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px 48px;
+    padding-top: 56px;
+    padding-bottom: 48px;
+  }
+  .copy {
+    flex: 1 1 480px;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+  h1 {
+    font-size: clamp(34px, 7vw, 56px);
+    line-height: 1.08;
+    font-weight: 800;
+  }
+  .accent {
+    color: var(--orange);
+  }
+  .lead {
+    font-size: clamp(16px, 2.2vw, 18px);
+    line-height: 1.6;
+    color: var(--on-navy-strong);
+    max-width: 560px;
+  }
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .actions .btn {
+    padding: 15px 28px;
+  }
+  .media {
+    flex: 1 1 360px;
+    min-width: 0;
+    aspect-ratio: 4 / 3;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    overflow: hidden;
+    background: var(--navy-mid);
+  }
+  .media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .usp-bar {
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+  }
+  .usps {
+    list-style: none;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px 24px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .usps li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .usps svg {
+    flex: none;
+  }
+  @media (min-width: 768px) {
+    .hero-inner {
+      padding-top: 96px;
+      padding-bottom: 72px;
+    }
+    .media {
+      aspect-ratio: auto;
+      height: 380px;
+    }
+    .usps {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px 48px;
+    }
+  }
+</style>

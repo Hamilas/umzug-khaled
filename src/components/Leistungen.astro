@@ -1,0 +1,118 @@
+---
+const services = [
+  {
+    title: 'Privatumzug',
+    text: 'Von der Wohnung bis zum Haus – sorgfältig verladen, sicher transportiert, pünktlich geliefert.',
+    icon: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/>',
+  },
+  {
+    title: 'Firmenumzug',
+    text: 'Büros und Gewerbeflächen mit minimaler Ausfallzeit – geplant, koordiniert und effizient umgesetzt.',
+    icon: '<rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h2M14 7h2M8 11h2M14 11h2M8 15h2M14 15h2"/>',
+  },
+  {
+    title: 'Transporte',
+    text: 'Möbel, Geräte und Waren – einzeln oder in größeren Mengen, kurzfristig und deutschlandweit.',
+    icon: '<path d="M2 6h11v10H2z"/><path d="M13 9h4l4 3v4h-8"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/>',
+  },
+  {
+    title: 'Entrümpelung',
+    text: 'Keller, Dachboden, Garage oder ganze Räume – schnell geräumt und besenrein übergeben.',
+    icon: '<path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/><path d="M10 11v6M14 11v6"/>',
+  },
+  {
+    title: 'Haushaltsauflösung',
+    text: 'Einfühlsam und diskret: Wir lösen komplette Haushalte auf und kümmern uns um alles Weitere.',
+    icon: '<path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 14h6"/>',
+  },
+  {
+    title: 'Entsorgung',
+    text: 'Sperrmüll, Altmöbel und Elektrogeräte – fachgerecht entsorgt und, wo möglich, recycelt.',
+    icon: '<path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 4v5h-5"/>',
+  },
+  {
+    title: 'Verpackungsservice',
+    text: 'Umzugskartons und Verpackungsmaterial – auf Wunsch packen wir für Sie ein und aus.',
+    icon: '<path d="M3 8l9-5 9 5v8l-9 5-9-5z"/><path d="M3 8l9 5 9-5M12 13v8"/>',
+  },
+  {
+    title: 'Möbelmontage',
+    text: 'Ab- und Aufbau von Möbeln, damit Ihr neues Zuhause direkt bezugsfertig ist.',
+    icon: '<path d="M14 6l4 4-9 9H5v-4z"/><path d="M13 7l4 4"/>',
+  },
+];
+---
+
+<section id="leistungen" class="container section" aria-labelledby="leistungen-titel">
+  <span class="eyebrow">Unsere Leistungen</span>
+  <h2 id="leistungen-titel" class="h2">Alles aus einer Hand – für jeden Auftrag.</h2>
+  <ul class="grid">
+    {
+      services.map((s) => (
+        <li class="card">
+          <div class="icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" set:html={s.icon} />
+          </div>
+          <h3>{s.title}</h3>
+          <p>{s.text}</p>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  .section {
+    padding-top: 64px;
+    padding-bottom: 56px;
+  }
+  .h2 {
+    margin: 12px 0 32px;
+    max-width: 640px;
+  }
+  .grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: 20px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: var(--navy);
+    color: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  h3 {
+    font-size: 18px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+  }
+  @media (min-width: 768px) {
+    .section {
+      padding-top: 88px;
+      padding-bottom: 72px;
+    }
+    .h2 {
+      margin-bottom: 40px;
+    }
+  }
+</style>
