@@ -1,5 +1,22 @@
 <a href="#kontakt" class="btn btn-primary sticky-cta">Angebot anfordern</a>
 
+<script>
+  // Ausblenden, solange Hero oder Kontaktbereich sichtbar sind
+  const cta = document.querySelector<HTMLElement>('.sticky-cta');
+  const targets = ['top', 'kontakt'].map((id) => document.getElementById(id)).filter(Boolean) as HTMLElement[];
+  if (cta && targets.length && 'IntersectionObserver' in window) {
+    const visible = new Set<Element>();
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => (e.isIntersecting ? visible.add(e.target) : visible.delete(e.target)));
+        cta.classList.toggle('is-hidden', visible.size > 0);
+      },
+      { threshold: 0.15 }
+    );
+    targets.forEach((t) => io.observe(t));
+  }
+</script>
+
 <style>
   .sticky-cta {
     position: fixed;
@@ -10,6 +27,18 @@
     padding: 15px 24px;
     font-size: 16px;
     box-shadow: 0 8px 24px rgba(15, 31, 61, 0.35);
+    transition: opacity 0.2s, transform 0.2s;
+  }
+  .sticky-cta.is-hidden {
+    opacity: 0;
+    transform: translateY(120%);
+    pointer-events: none;
+    visibility: hidden;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .sticky-cta {
+      transition: none;
+    }
   }
   @media (min-width: 900px) {
     .sticky-cta {
