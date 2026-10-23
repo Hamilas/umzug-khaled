@@ -4,7 +4,6 @@ Alles hier Genannte ist auf der Seite als sichtbarer `[PLATZHALTER]` markiert od
 
 ## Vom Inhaber benötigt
 
-- [ ] **Vollständiger Name des Inhabers** – Impressum (`owner` in `src/data/site.ts`)
 - [ ] **USt-IdNr.** oder Hinweis auf Kleinunternehmerregelung (§ 19 UStG) – Impressum (`vatNote`)
 - [ ] **Kundenbewertungen prüfen** – Wortlaut in `src/components/Kundenstimmen.astro` mit den Originalfotos abgleichen (wurden per ChatGPT abgetippt) und Einverständnis der Kunden sicherstellen
 - [ ] **Link zum Google-Unternehmensprofil** (Bewertungen) – `googleReviewsUrl`; danach erscheint der Button automatisch

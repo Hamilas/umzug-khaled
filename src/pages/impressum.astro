@@ -1,5 +1,5 @@
 ---
-// Impressum. Inhabername und USt-Angabe sind noch Platzhalter (siehe site.ts / TODO.md).
+// Impressum. USt-Angabe ist noch Platzhalter (siehe site.ts / TODO.md).
 import Legal from '../layouts/Legal.astro';
 import { site } from '../data/site';
 ---
@@ -13,7 +13,7 @@ import { site } from '../data/site';
     <h2>Angaben gemäß § 5 DDG</h2>
     <p>
       DAYFA Transporter<br />
-      Inhaber: <span class="placeholder">{site.owner}</span><br />
+      Inhaber: {site.owner}<br />
       {site.street}<br />
       {site.zip} {site.city}
     </p>
@@ -38,7 +38,7 @@ import { site } from '../data/site';
   <section>
     <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
     <p>
-      <span class="placeholder">{site.owner}</span><br />
+      {site.owner}<br />
       {site.street}, {site.zip} {site.city}
     </p>
   </section>
