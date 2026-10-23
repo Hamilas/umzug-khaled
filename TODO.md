@@ -4,7 +4,7 @@ Alles hier Genannte ist auf der Seite als sichtbarer `[PLATZHALTER]` markiert od
 
 ## Vom Inhaber benötigt
 
-- [ ] **Vollständiger Name des Inhabers** – Impressum und Datenschutz (`owner` in `src/data/site.ts`)
+- [ ] **Vollständiger Name des Inhabers** – Impressum (`owner` in `src/data/site.ts`)
 - [ ] **USt-IdNr.** oder Hinweis auf Kleinunternehmerregelung (§ 19 UStG) – Impressum (`vatNote`)
 - [ ] **Erreichbarkeit / Öffnungszeiten** – Kontaktbereich (`openingHours`)
 - [ ] **Echte Kundenbewertungen** (mit Einverständnis der Kunden) – `src/components/Kundenstimmen.astro`
@@ -19,5 +19,5 @@ Alles hier Genannte ist auf der Seite als sichtbarer `[PLATZHALTER]` markiert od
 
 ## Rechtliches (bitte prüfen lassen)
 
-- [ ] **Datenschutzerklärung** ausfüllen – `src/pages/datenschutz.astro` enthält nur die Abschnittsstruktur mit Platzhaltern (Hoster, E-Mail, WhatsApp, Aufsichtsbehörde, Stand)
+- [ ] **Datenschutzerklärung** – wurde auf Wunsch entfernt. Für gewerbliche Websites in Deutschland ist sie in der Regel Pflicht (DSGVO Art. 13, z. B. wegen Server-Logs). Vor Livegang klären.
 - [ ] **Streitbeilegung** im Impressum prüfen

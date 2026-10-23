@@ -1,4 +1,6 @@
 ---
+// Fußzeile: auf der Startseite mit Spalten (Navigation, Leistungen, Kontakt),
+// auf Unterseiten nur die schmale Copyright-Zeile.
 import { site } from '../data/site';
 
 interface Props {
@@ -47,7 +49,6 @@ const path = Astro.url.pathname;
     <span>© {year} DAYFA Transporter. Alle Rechte vorbehalten.</span>
     <span class="legal-links">
       <a href="/impressum" aria-current={path.startsWith('/impressum') ? 'page' : undefined}>Impressum</a>
-      <a href="/datenschutz" aria-current={path.startsWith('/datenschutz') ? 'page' : undefined}>Datenschutz</a>
     </span>
   </div>
 </footer>

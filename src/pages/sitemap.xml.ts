@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 
-const pages = ['/', '/impressum', '/datenschutz'];
+// Erzeugt /sitemap.xml beim Build. Neue Seiten hier ergänzen.
+const pages = ['/', '/impressum'];
 
 export const GET: APIRoute = ({ site }) => {
   const urls = pages.map((p) => `  <url><loc>${new URL(p, site).href}</loc></url>`).join('\n');

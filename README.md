@@ -29,7 +29,7 @@ Das fertige Ergebnis liegt in `dist/` – reine HTML/CSS/Bild-Dateien, die auf j
 - **Netlify / Cloudflare Pages / Vercel:** Repository verbinden, Build-Befehl `npm run build`, Ausgabeordner `dist`.
 - **Klassischer Webspace (z. B. IONOS, Strato):** `npm run build` ausführen und den Inhalt von `dist/` per FTP hochladen.
 
-Vor dem ersten Livegang die Punkte in [TODO.md](TODO.md) erledigen, vor allem Domain, Impressum, Datenschutz.
+Vor dem ersten Livegang die Punkte in [TODO.md](TODO.md) erledigen, vor allem Domain und Impressum.
 
 ## Struktur
 
@@ -41,7 +41,7 @@ src/data/site.ts      Firmendaten an einer Stelle (Telefon, Adresse, Platzhalter
 src/styles/global.css Farben, Schrift, Buttons
 src/components/       Abschnitte der Startseite, Header, Footer
 src/layouts/          Grundgerüst (SEO/OG-Tags) und Layout für Rechtsseiten
-src/pages/            Startseite, Impressum, Datenschutz, sitemap.xml, robots.txt
+src/pages/            Startseite, Impressum, sitemap.xml, robots.txt
 ```
 
 ## Inhalte ändern

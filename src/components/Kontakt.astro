@@ -1,4 +1,6 @@
 ---
+// Kontaktbereich: WhatsApp, Telefon, E-Mail und Standortkarte. Kein Formular –
+// Anfragen laufen direkt über diese Kanäle.
 import { site } from '../data/site';
 ---
 
@@ -29,9 +31,6 @@ import { site } from '../data/site';
     <address>
       {site.street}, {site.zip} {site.city} · Einsatz auch in der Umgebung und deutschlandweit auf Anfrage.
     </address>
-    <a href={site.routeUrl} class="btn btn-outline on-light" target="_blank" rel="noopener">
-      Route planen<span class="sr-only"> (öffnet Google Maps)</span>
-    </a>
   </div>
 </section>
 
@@ -113,9 +112,6 @@ import { site } from '../data/site';
     font-size: 14px;
     line-height: 1.6;
     color: var(--muted);
-  }
-  .location .btn {
-    margin-top: 6px;
   }
   @media (min-width: 768px) {
     .kontakt {

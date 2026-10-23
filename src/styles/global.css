@@ -1,3 +1,4 @@
+/* Markenfarben und Grundwerte – hier zentral ändern */
 :root {
   --navy: #0f1f3d;
   --navy-mid: #16305f;
@@ -138,6 +139,7 @@ p {
   font-weight: 800;
 }
 
+/* Pillen-Buttons: .btn + .btn-primary (orange), .btn-ghost-light (auf Navy), .btn-outline (auf Hell) */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -187,6 +189,7 @@ p {
   color: #fff;
 }
 
+/* Gelbe Markierung für noch fehlende Inhalte ([PLATZHALTER]) */
 .placeholder {
   background: #fff4dc;
   color: #7a3b05;

@@ -1,4 +1,6 @@
 ---
+// Grundgerüst jeder Seite: <head> mit Titel, Beschreibung, Canonical, Open-Graph-Tags
+// und optionalem JSON-LD. Lädt die selbst gehostete Schrift und die globalen Styles.
 import '@fontsource-variable/manrope';
 import '../styles/global.css';
 import { getImage } from 'astro:assets';
@@ -14,6 +16,7 @@ interface Props {
 
 const { title, description, jsonLd, noindex = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
+// Vorschaubild für Social Media (1200×630) aus dem Hero-Foto erzeugen
 const ogImage = await getImage({ src: heroImg, width: 1200, height: 630, format: 'jpg' });
 const ogImageUrl = new URL(ogImage.src, Astro.site).href;
 ---

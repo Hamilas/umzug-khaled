@@ -15,9 +15,6 @@ export const site = {
   street: 'Elisabeth-Selbert-Allee 35',
   zip: '53175',
   city: 'Bonn',
-  routeUrl:
-    'https://www.google.com/maps/dir/?api=1&destination=' +
-    encodeURIComponent('Elisabeth-Selbert-Allee 35, 53175 Bonn'),
   // TODO: Link zum Google-Unternehmensprofil (Bewertungen). Solange null, wird ein Platzhalter angezeigt.
   googleReviewsUrl: null as string | null,
 };
