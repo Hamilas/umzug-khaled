@@ -3,7 +3,7 @@
 export const site = {
   name: 'DAYFA Transporter',
   // Domain (auch in astro.config.mjs ändern)
-  url: 'https://dayfatransporter.de',
+  url: 'https://www.dayfatransporter.de',
   // Inhaber (Impressum)
   owner: 'Khaled Hamrouni',
   // Telefon: Anzeige-Format, Link-Format (tel:) und internationales Format für Google

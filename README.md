@@ -27,7 +27,7 @@ Das fertige Ergebnis liegt in `dist/` – reine HTML/CSS/Bild-Dateien, die auf j
 ## Deployment
 
 - **Vercel (aktuell gewählt):** Projekt auf vercel.com importieren (GitHub) oder `npx vercel --prod` ausführen. Einstellungen kommen aus `vercel.json`. Domain unter *Settings → Domains* hinzufügen und bei Hostinger diese DNS-Einträge setzen:
-  - `A`, Name `@`, Wert `76.76.21.21`
+  - `A`, Name `@`, Wert `76.76.21.21` (leitet auf www weiter)
   - `CNAME`, Name `www`, Wert `cname.vercel-dns.com`
 - **Netlify / Cloudflare Pages:** Repository verbinden, Build-Befehl `npm run build`, Ausgabeordner `dist`.
 - **Klassischer Webspace (z. B. IONOS, Strato):** `npm run build` ausführen und den Inhalt von `dist/` per FTP hochladen.
